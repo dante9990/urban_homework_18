@@ -1,15 +1,16 @@
-import { useParams } from "react-router-dom";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { beanSelector } from "../../redux/bean/beanSelector";
 import { useEffect } from "react";
-import { getBean } from "../../api/bean";
 import { Loader } from "../../components/Loader";
 import { Error } from "../../components/Error";
+import { useAppDispatch } from "../../redux/store";
+import { getBean } from "../../api/bean";
+import { useParams } from "react-router-dom";
 
 export const BeanPage = () => {
   const { id } = useParams();
-  const dispatch = useDispatch();
+  const dispatch = useAppDispatch();
   const { data, isLoading, isError } = useSelector(beanSelector);
 
   useEffect(() => {
