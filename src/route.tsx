@@ -12,7 +12,7 @@ import { NotFound } from "./pages/NotFound";
 
 export const router = createBrowserRouter([
   {
-    path: "/",
+    path: "urban_homework_18",
     element: <Layout />,
     loader: Loader,
     children: [
